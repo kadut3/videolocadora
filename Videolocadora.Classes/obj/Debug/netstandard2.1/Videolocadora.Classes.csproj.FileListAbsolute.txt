@@ -1,0 +1,5 @@
+C:\Users\usuario\source\repos\Videolocadora\Videolocadora.Classes\bin\Debug\netstandard2.1\Videolocadora.Classes.deps.json
+C:\Users\usuario\source\repos\Videolocadora\Videolocadora.Classes\bin\Debug\netstandard2.1\Videolocadora.Classes.dll
+C:\Users\usuario\source\repos\Videolocadora\Videolocadora.Classes\obj\Debug\netstandard2.1\Videolocadora.Classes.csprojAssemblyReference.cache
+C:\Users\usuario\source\repos\Videolocadora\Videolocadora.Classes\obj\Debug\netstandard2.1\Videolocadora.Classes.AssemblyInfoInputs.cache
+C:\Users\usuario\source\repos\Videolocadora\Videolocadora.Classes\obj\Debug\netstandard2.1\Videolocadora.Classes.AssemblyInfo.cs

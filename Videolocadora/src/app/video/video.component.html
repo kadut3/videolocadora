@@ -1,0 +1,120 @@
+<div class="container"> 
+    <mat-card> 
+      <mat-toolbar color="accent"> 
+        <div align="center" style="color:white;text-align: right;"> 
+          Angular - Videolocadora
+        </div>   
+      </mat-toolbar> 
+    <br><br> 
+      <mat-card-content> 
+        <form [formGroup]="videoForm"(ngSubmit)="onFormSubmit()"> 
+                <table> 
+                  <tr> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Nome" matTooltip="Informe o nome do video" matInput placeholder="Nome do vídeo"> 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Nome').value && videoForm.get('Nome').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Genero" matTooltip="Informe o gênero" matInput placeholder="Gênero"> 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Genero').value && videoForm.get('Genero').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                  </tr>
+                  <tr> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Lancamento" matTooltip="Informe o ano de lançamento" matInput placeholder="Ano de lançamento"> 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Lancamento').value && videoForm.get('Lancamento').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Imagem" matTooltip="Informe o caminho da imagem" matInput placeholder="Imagem"> 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Imagem').value && videoForm.get('Imagem').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                  </tr> 
+                  <tr> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Classificacao" matTooltip="Informe a classificação" matInput placeholder="Classificação"> 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Classificacao').value && videoForm.get('Classificacao').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Observacao" matTooltip="Observação" matInput placeholder="Observação"> 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Observacao').value && videoForm.get('Observacao').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                  </tr>
+                  <tr> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="Ativo" matTooltip="Status" matInput > 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('Ativo').value && videoForm.get('Ativo').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                    <td class="tbl1"> 
+                      <mat-form-field class="demo-full-width"> 
+                        <input formControlName="DataCadastro" matTooltip="Data de cadastro" matInput > 
+                      </mat-form-field> 
+                      <mat-error> 
+                        <span *ngIf="!videoForm.get('DataCadastro').value && videoForm.get('DataCadastro').touched"></span> 
+                      </mat-error> 
+                    </td> 
+                  </tr>
+
+                  <tr> 
+                    <td></td> 
+                    <td  class="content-center"> 
+                      <button type="submit" mat-raised-button color="accent"matTooltip="Clique no botão Enviar"[disabled]="!videoForm.valid">Enviar</button>     
+                      <button type="reset" mat-raised-button color="accent"matTooltip="Clique no botão Resetar" (click)="resetForm()">Resetar</button> 
+                    </td> 
+                    <td> 
+                      <p *ngIf="dataSaved" style="color:rgb(55, 0, 128);font-size:20px;font-weight:bold" Class="success" align="left"> 
+                        {{message}} 
+                      </p> 
+                    </td> 
+                  </tr> 
+                </table> 
+           <br><br> 
+          <table class="table" > 
+              <tr ngclass="btn-primary"> 
+                <th class="tbl2">Código do vídeo</th> 
+                <th class="tbl2">Nome</th> 
+                <th class="tbl2">Edita</th> 
+                <th class="tbl2">Deleta</th> 
+              </tr> 
+              <tr *ngFor="let video of allVideos | async"> 
+                <td class="tbl2">{{video.codVideo}}</td> 
+                <td class="tbl2">{{video.nome}}</td> 
+                <td class="tbl2"> 
+                  <button type="button" class="btn btn-info"matTooltip="Clique no botão para Editar"(click)="loadAlunoToEdit(video.videoId)">Editar</button> 
+                </td> 
+                <td class="tbl2"> 
+                  <button type="button" class="btn btn-danger"matTooltip="Clique no botão para Deletar"(click)="deleteVideo(video.codVideo)">Deletar</button> 
+                </td> 
+              </tr>    
+            </table> 
+        </form> 
+      </mat-card-content> 
+    </mat-card> 
+    </div>
